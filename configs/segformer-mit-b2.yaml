@@ -10,8 +10,8 @@
 run_name: "segformer_mit_b2-base_run"
 
 data:
-  batch_size: 4
-  batch_size_eval: 4
+  batch_size: 2
+  batch_size_eval: 2
 
 augmentation:
   train:
@@ -38,7 +38,7 @@ model:
   name: "segformer-mit-b2"
 
 training:
-  epochs: 50
+  epochs: 1700
   optimizer:
     type: torch.optim.AdamW
     lr: 0.00006
@@ -46,7 +46,7 @@ training:
   scheduler:
     type: torch.optim.lr_scheduler.PolynomialLR
     power: 1
-    total_iters: 50
+    total_iters: 1700
   preprocessor: "segformer"
   eval: 
     sliding_window: True
