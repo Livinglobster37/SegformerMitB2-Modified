@@ -18,8 +18,8 @@ augmentation:
     RandomScale:
       scale_limit: [0, 1]
     RandomCrop:
-      width: 512
-      height: 512  
+      width: 1024
+      height: 1024  
     HorizontalFlip:
       p: 0.5
     Normalize:
@@ -50,7 +50,7 @@ training:
   preprocessor: "segformer"
   eval: 
     sliding_window: True
-    window: 512
-    stride: 512
+    window: 1024
+    stride: 1024
 
 
