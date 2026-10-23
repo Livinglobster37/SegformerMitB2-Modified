@@ -10,16 +10,16 @@
 run_name: "segformer_mit_b2-base_run"
 
 data:
-  batch_size: 8
-  batch_size_eval: 8
+  batch_size: 2
+  batch_size_eval: 2
 
 augmentation:
   train:
     RandomScale:
       scale_limit: [0, 1]
     RandomCrop:
-      width: 1024
-      height: 1024  
+      width: 512
+      height: 512  
     HorizontalFlip:
       p: 0.5
     Normalize:
@@ -38,7 +38,7 @@ model:
   name: "segformer-mit-b2"
 
 training:
-  epochs: 1700
+  epochs: 15
   optimizer:
     type: torch.optim.AdamW
     lr: 0.00006
@@ -46,11 +46,11 @@ training:
   scheduler:
     type: torch.optim.lr_scheduler.PolynomialLR
     power: 1
-    total_iters: 1700
+    total_iters: 15
   preprocessor: "segformer"
   eval: 
     sliding_window: True
-    window: 1024
-    stride: 1024
+    window: 512
+    stride: 512
 
 
