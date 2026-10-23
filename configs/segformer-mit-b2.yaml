@@ -38,7 +38,7 @@ model:
   name: "segformer-mit-b2"
 
 training:
-  epochs: 1700
+  epochs: 15
   optimizer:
     type: torch.optim.AdamW
     lr: 0.00006
@@ -46,7 +46,7 @@ training:
   scheduler:
     type: torch.optim.lr_scheduler.PolynomialLR
     power: 1
-    total_iters: 1700
+    total_iters: 15
   preprocessor: "segformer"
   eval: 
     sliding_window: True
